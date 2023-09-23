@@ -30,7 +30,7 @@
               <a href="#about" class="link">About</a>
             </li>
             <li class="item font-16px">
-              <a href="https://devnamdev2003.github.io/img/resume.png" class="link">Resume</a>
+              <a href="https://drive.google.com/file/d/1HhqklmCai1bkZc1HZT04w8I-CV32rkYr" class="link">Resume</a>
             </li>
           </ul>
         </div>
@@ -71,7 +71,7 @@
         <div class="about_des">
           <div class="about_img">
             <div class="img">
-              <img id="light" src="img/img.jpeg" alt="" />
+              <img id="light" src="img.jpeg" alt="" />
             </div>
           </div>
           <div class="about_para">
@@ -241,6 +241,11 @@
             <p class="django">django</p>
             <br />
             <span class="name">Django</span>
+          </span>
+          <span class="skill_span">
+            <p class="django">Mongodb</p>
+            <br />
+            <span class="name">MongoDB</span>
           </span>
         </div>
       </div>
@@ -444,7 +449,7 @@
         <div class="contact_heading">
           <h1>Contact</h1>
         </div>
-        <form method="post" onsubmit="handleFormSubmit(event)">
+        <form method="post" action="https://formsubmit.co/23899efa11e41cb45ecaa333021329f3" onsubmit="handleFormSubit(event)">
           <div class="name">
             <label for="id_name">Name:</label>
             <input type="text" id="id_name" name="name" maxlength="20" placeholder="Name" required>
@@ -511,46 +516,6 @@
       </div>
     </div>
   </div>
-
-  <script>
-    function handleFormSubmit(event) {
-      event.preventDefault(); // Prevent the default form submission
-      alert('Thank you for your message! We will get back to you soon.')
-      // Get the form elements by their IDs
-      const nameInput = document.getElementById("id_name");
-      const emailInput = document.getElementById("id_email");
-      const messageInput = document.getElementById("id_message");
-      // Extract the values from the form elements
-      const name = nameInput.value;
-      const email = emailInput.value;
-      const message = messageInput.value;
-      // Optionally, you can reset the form after handling the data
-      const endpoint = "https://contactapi-1uvn.onrender.com/";
-      const data = {
-        name: name,
-        email: email,
-        message: message,
-      };
-      const requestOptions = {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      };
-      // Sending the POST request
-      fetch(endpoint, requestOptions)
-        .then((response) => response.json())
-        .then((data) => {
-          console.log("Response from the API:", data);
-        })
-        .catch((error) => {
-          console.error("Error:", error);
-        });
-      event.target.reset();
-    }
-  </script>
-
 </body>
 
 </html>
